@@ -7,12 +7,13 @@ public class Person {
     private final Scanner input = new Scanner(System.in);
     private final LinkedHashMap<String, Object> data;
 
-    boolean exit = false;
+    
 
     public Person(){
         data = new LinkedHashMap<>();
     }
     public void addData(){
+        boolean exit = false;
         String key;
         Object value;
         while (!exit) {
