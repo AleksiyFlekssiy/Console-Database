@@ -16,16 +16,16 @@ public class Database {
     void getCommand(){
         System.out.println("¬ведите команду");
         String command = input.nextLine();
-        switch (command){
-            case "Create database":createDatabase(); break;
-            case "Delete database":deleteDatabase(); break;
-            case "Add person":addPerson(); break;
-            case "Delete person":deletePerson(); break;
-            case "Add data to person":addData(); break;
-            case "Change person data":changeData(); break;
-            case "Delete person data":deleteData(); break;
-            case "Show person data":showPerson(); break;
-            case "Exit": trigger = false; break;
+        switch (command) {
+            case "Create database" -> createDatabase();
+            case "Delete database" -> deleteDatabase();
+            case "Add person" -> addPerson();
+            case "Delete person" -> deletePerson();
+            case "Add data to person" -> addData();
+            case "Change person data" -> changeData();
+            case "Delete person data" -> deleteData();
+            case "Show person data" -> showPerson();
+            case "Exit" -> trigger = false;
         }
     }
 
