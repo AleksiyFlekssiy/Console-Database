@@ -39,7 +39,7 @@ public class Database {
     }
 
     void addPerson(){
-        System.out.println("Добавить ли новому участнику информацию?");
+        System.out.println("Добавить информацию новому участнику?");
         if (input.nextLine().equals("Да")) {
             try {
                 var person = new Person();
@@ -64,7 +64,7 @@ public class Database {
         else System.out.println("Неверная команда");
 
     }
-    void deletePerson(){
+    public void deletePerson(){
         list.remove(getPerson());
     }
 

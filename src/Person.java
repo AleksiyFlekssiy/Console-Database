@@ -14,7 +14,7 @@ public class Person {
         String key;
         Object value;
         while (true) {
-            System.out.println("Введите имя параметра");
+            System.out.println("Введите название параметра");
             key = input.nextLine();
             if (key.equals("Exit")) return;
             System.out.println("Введите значение параметра");
@@ -24,14 +24,14 @@ public class Person {
     }
 
     public void changeData(){
-        System.out.println("Что вы хотите изменить?");
+        System.out.println("Что требуется изменить?");
         System.out.println("Параметр  Значение  Оба");
         switch (input.nextLine()) {
-            case "Параметр" -> { //TODO При изменении параметра, старый удаляется и пересоздается на последнем слоте, вместо своего.
-                System.out.println("Введите имя параметра");
+            case "Параметр" -> {
+                System.out.println("Введите название параметра");
                 String oldKey = input.nextLine();
                 if (data.containsKey(oldKey)) {
-                    System.out.println("Введите новое имя параметра");
+                    System.out.println("Введите новое название параметра");
                     String newKey = input.nextLine();
                     int size = data.size();
                     String[] keys = data.keySet().toArray(new String[size]);
@@ -45,21 +45,21 @@ public class Person {
                         else data.put(keys[i], values[i]);
 
                     }
-                    System.out.println("Имя параметра было изменено с " + oldKey + " на " + newKey);
+                    System.out.println("Название сменено с  " + oldKey + " на " + newKey);
                 }
-                else System.out.println("Такого параметра не существует");
+                else System.out.println("Параметр не найден");
             }
             case "Значение" -> {
-                System.out.println("Введите имя параметра");
+                System.out.println("Введите название параметра");
                 String key = input.nextLine();
                 if (data.containsKey(key)) {
                     System.out.println("Введите новое значение параметра");
                     String newValue = input.nextLine();
                     data.replace(key, newValue);
                 }
-                else System.out.println("Такого параметра не существует");
+                else System.out.println("Параметр не найден");
             }
-            case "Оба" -> System.out.println("Введите имя параметра");
+            case "Оба" -> System.out.println("ФУНКЦИЯ НЕДОСТУПНА");
         }
     }
 
