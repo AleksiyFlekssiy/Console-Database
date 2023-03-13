@@ -14,24 +14,24 @@ public class Person {
         String key;
         Object value;
         while (true) {
-            System.out.println("Введите название параметра");
+            System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
             key = input.nextLine();
             if (key.equals("Exit")) return;
-            System.out.println("Введите значение параметра");
+            System.out.println("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
             value = input.nextLine();
             data.put(key, value);
         }
     }
 
     public void changeData(){
-        System.out.println("Что требуется изменить?");
-        System.out.println("Параметр  Значение  Оба");
+        System.out.println("Р§С‚Рѕ С‚СЂРµР±СѓРµС‚СЃСЏ РёР·РјРµРЅРёС‚СЊ?");
+        System.out.println("РџР°СЂР°РјРµС‚СЂ  Р—РЅР°С‡РµРЅРёРµ  РћР±Р°");
         switch (input.nextLine()) {
-            case "Параметр" -> {
-                System.out.println("Введите название параметра");
+            case "РџР°СЂР°РјРµС‚СЂ" -> {
+                System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
                 String oldKey = input.nextLine();
                 if (data.containsKey(oldKey)) {
-                    System.out.println("Введите новое название параметра");
+                    System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РЅР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
                     String newKey = input.nextLine();
                     int size = data.size();
                     String[] keys = data.keySet().toArray(new String[size]);
@@ -45,26 +45,26 @@ public class Person {
                         else data.put(keys[i], values[i]);
 
                     }
-                    System.out.println("Название сменено с  " + oldKey + " на " + newKey);
+                    System.out.println("РќР°Р·РІР°РЅРёРµ СЃРјРµРЅРµРЅРѕ СЃ  " + oldKey + " РЅР° " + newKey);
                 }
-                else System.out.println("Параметр не найден");
+                else System.out.println("РџР°СЂР°РјРµС‚СЂ РЅРµ РЅР°Р№РґРµРЅ");
             }
-            case "Значение" -> {
-                System.out.println("Введите название параметра");
+            case "Р—РЅР°С‡РµРЅРёРµ" -> {
+                System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
                 String key = input.nextLine();
                 if (data.containsKey(key)) {
-                    System.out.println("Введите новое значение параметра");
+                    System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
                     String newValue = input.nextLine();
                     data.replace(key, newValue);
                 }
-                else System.out.println("Параметр не найден");
+                else System.out.println("РџР°СЂР°РјРµС‚СЂ РЅРµ РЅР°Р№РґРµРЅ");
             }
-            case "Оба" -> System.out.println("ФУНКЦИЯ НЕДОСТУПНА");
+            case "РћР±Р°" -> System.out.println("Р¤РЈРќРљР¦РРЇ РќР•Р”РћРЎРўРЈРџРќРђ");
         }
     }
 
     public void deleteData(){
-        System.out.println("Введите название параметра");
+        System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂР°");
         String key = input.nextLine();
         data.remove(key);
     }
