@@ -14,7 +14,7 @@ public class Database {
     }
 
     void getCommand(){
-        System.out.println("Введите команду");
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ");
         String command = input.nextLine();
         switch (command) {
             case "Create database" -> createDatabase();
@@ -39,8 +39,8 @@ public class Database {
     }
 
     void addPerson(){
-        System.out.println("Добавить информацию новому участнику?");
-        if (input.nextLine().equals("Да")) {
+        System.out.println("Р”РѕР±Р°РІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РЅРѕРІРѕРјСѓ СѓС‡Р°СЃС‚РЅРёРєСѓ?");
+        if (input.nextLine().equals("Р”Р°")) {
             try {
                 var person = new Person();
                 list.add(person);
@@ -53,7 +53,7 @@ public class Database {
             }
 
         }
-        else if (input.nextLine().equals("Нет")){
+        else if (input.nextLine().equals("РќРµС‚")){
             try {
                 list.add(new Person());
             } catch (NullPointerException NPE) {
@@ -61,7 +61,7 @@ public class Database {
                 list.add(new Person());
             }
         }
-        else System.out.println("Неверная команда");
+        else System.out.println("РќРµРІРµСЂРЅР°СЏ РєРѕРјР°РЅРґР°");
 
     }
     public void deletePerson(){
@@ -82,7 +82,7 @@ public class Database {
     }
     public Person getPerson(){
         byte number;
-        System.out.println("Введите номер участника");
+        System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СѓС‡Р°СЃС‚РЅРёРєР°");
         number = Byte.parseByte(input.nextLine());
         return list.get(number-1);
     }
