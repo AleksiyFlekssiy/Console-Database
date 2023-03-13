@@ -24,6 +24,7 @@ public class Database {
             case "Add data to person" -> addData();
             case "Change person data" -> changeData();
             case "Delete person data" -> deleteData();
+            case "Find person data" -> findData();
             case "Show person data" -> showPerson();
             case "Exit" -> trigger = false;
         }
@@ -76,6 +77,9 @@ public class Database {
     }
     void deleteData() {
         getPerson().deleteData();
+    }
+    void findData(){
+        getPerson().findData();
     }
     void showPerson(){
         getPerson().showData();

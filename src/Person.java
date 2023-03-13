@@ -68,6 +68,33 @@ public class Person {
         String key = input.nextLine();
         data.remove(key);
     }
+    public void findData(){
+        String operation;
+        System.out.println("Что нужно найти?");
+        operation = input.nextLine();
+        switch (operation){
+            case "Параметр"-> {
+                System.out.println("Введите возможное название параметра");
+                String key = input.nextLine();
+                int counter = 0;
+                for (String datakey : data.keySet()){
+                    if(datakey.equalsIgnoreCase(key) || datakey.contains(key)) System.out.println(datakey);
+                    counter++;
+                }
+                if (counter <= 0) System.out.println("Параметров не найдено");
+            }
+            case "Значение" -> {
+                System.out.println("Введите возможное значение");
+                String value = input.nextLine();
+                int counter = 0;
+                for(String key : data.keySet()){
+                    if(data.get(key).toString().contains(value)) System.out.println(data.get(key));
+                    counter++;
+                }
+                if (counter <= 0) System.out.println("Значений не найдено");
+            }
+        }
+    }
     public void showData(){
         for(HashMap.Entry<String, Object> iterator : data.entrySet()){
             System.out.println(iterator.getKey()+": "+iterator.getValue());
