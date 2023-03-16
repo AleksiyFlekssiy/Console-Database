@@ -2,12 +2,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
-public class Person {
+public class DataElement {
 
     private final Scanner input = new Scanner(System.in);
     private final LinkedHashMap<String, Object> data;
 
-    public Person(){
+    public DataElement(){
         data = new LinkedHashMap<>();
     }
     public void addData(){
@@ -16,7 +16,7 @@ public class Person {
         while (true) {
             System.out.println("Введите название параметра");
             key = input.nextLine();
-            if (key.equals("Exit")) return;
+            if (key.equals("Выход")) return;
             System.out.println("Введите значение параметра");
             value = input.nextLine();
             data.put(key, value);

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Database {
-    ArrayList<Person> list;
+    ArrayList<DataElement> list;
     Scanner input = new Scanner(System.in);
     static boolean trigger = true;
     public static void main(String[] args) {
@@ -17,16 +17,16 @@ public class Database {
         System.out.println("Введите команду");
         String command = input.nextLine();
         switch (command) {
-            case "Create database" -> createDatabase();
-            case "Delete database" -> deleteDatabase();
-            case "Add person" -> addPerson();
-            case "Delete person" -> deletePerson();
-            case "Add data to person" -> addData();
-            case "Change person data" -> changeData();
-            case "Delete person data" -> deleteData();
-            case "Find person data" -> findData();
-            case "Show person data" -> showPerson();
-            case "Exit" -> trigger = false;
+            case "Создать базу данных" -> createDatabase();
+            case "Удалить базу данных" -> deleteDatabase();
+            case "Добавить элемент" -> addElement();
+            case "Удалить элемент" -> deleteElement();
+            case "Дополнить элемент" -> addData();
+            case "Изменить элемент" -> changeData();
+            case "Удалить информацию элемента" -> deleteData();
+            case "Найти элемент" -> findData();
+            case "Отобразить элемент" -> showElement();
+            case "Выход" -> trigger = false;
         }
     }
 
@@ -39,16 +39,16 @@ public class Database {
         list.clear();
     }
 
-    void addPerson(){
-        System.out.println("Добавить информацию новому участнику?");
+    void addElement(){
+        System.out.println("Добавить информацию новому элементу?");
         if (input.nextLine().equals("Да")) {
             try {
-                var person = new Person();
+                var person = new DataElement();
                 list.add(person);
                 person.addData();
             } catch (NullPointerException NPE) {
                 createDatabase();
-                var person = new Person();
+                var person = new DataElement();
                 list.add(person);
                 person.addData();
             }
@@ -56,35 +56,35 @@ public class Database {
         }
         else if (input.nextLine().equals("Нет")){
             try {
-                list.add(new Person());
+                list.add(new DataElement());
             } catch (NullPointerException NPE) {
                 createDatabase();
-                list.add(new Person());
+                list.add(new DataElement());
             }
         }
         else System.out.println("Неверная команда");
 
     }
-    public void deletePerson(){
-        list.remove(getPerson());
+    public void deleteElement(){
+        list.remove(getDataElement());
     }
 
     void addData(){
-        getPerson().addData();
+        getDataElement().addData();
     }
     void changeData(){
-        getPerson().changeData();
+        getDataElement().changeData();
     }
     void deleteData() {
-        getPerson().deleteData();
+        getDataElement().deleteData();
     }
     void findData(){
-        getPerson().findData();
+        getDataElement().findData();
     }
-    void showPerson(){
-        getPerson().showData();
+    void showElement(){
+        getDataElement().showData();
     }
-    public Person getPerson(){
+    public DataElement getDataElement(){
         byte number;
         System.out.println("Введите номер участника");
         number = Byte.parseByte(input.nextLine());
